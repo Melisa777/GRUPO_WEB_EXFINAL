@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EXAMEN_FINAL_CINE", "EXAMEN_FINAL_CINE\EXAMEN_FINAL_CINE.csproj", "{40F89B75-4144-4DD0-8E79-C9A46DEB6F8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "General", "General\General.csproj", "{707031AA-808C-48F8-86B4-676445CBADEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40F89B75-4144-4DD0-8E79-C9A46DEB6F8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40F89B75-4144-4DD0-8E79-C9A46DEB6F8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40F89B75-4144-4DD0-8E79-C9A46DEB6F8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40F89B75-4144-4DD0-8E79-C9A46DEB6F8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{707031AA-808C-48F8-86B4-676445CBADEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{707031AA-808C-48F8-86B4-676445CBADEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{707031AA-808C-48F8-86B4-676445CBADEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{707031AA-808C-48F8-86B4-676445CBADEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
