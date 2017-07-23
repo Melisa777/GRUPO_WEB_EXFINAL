@@ -1,0 +1,118 @@
+﻿@using General;
+
+@{
+    ViewBag.Title = "Index";
+
+
+    List<Products> producto = (List<Products>)ViewBag.ListadoProducto;
+    List<Suppliers> proveedor = (List<Suppliers>)ViewBag.ListadoProveedor;
+    List<Categories> categoria = (List<Categories>)ViewBag.ListadoCategoria;
+}
+
+<h2></h2>
+<h2>Listado de Productos </h2>
+
+<br />
+
+<br />
+@Html.ActionLink(
+    "Agregar nuevo producto",
+                "Registro",
+                   "Main",
+                   new { area = "CrudProducto" }, new { @class = "btn btn-success" })
+
+<br />
+
+
+<br />
+
+<table id="tbIDproducto">
+    <thead>
+        <tr>
+            <th> </th>
+            <th>
+                ID PRODUCTO
+            </th>
+            <th>
+                NOMBRE DEL PRODUCTO
+            </th>
+            <th>
+                PROVEEDOR
+            </th>
+            <th>
+                CATEGORIA
+            </th>
+            <th>
+                CANTIDAD POR UNIDAD
+            </th>
+            <th>
+                PRECIO UNITARIO
+            </th>
+            <th>
+                UNIDADES EN STOCK
+            </th>
+            <th>
+                UNIDADES EN ORDEN
+            </th>
+            <th>
+                NIVEL REORDEN
+            </th>
+            <th>
+                DISCONTINUADO
+            </th>
+
+
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Products item in producto)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(
+                   "Editar",
+                   "Editar",
+                   "Main",
+                   new { area = "CrudProducto", ID = item.ProductID }, null)
+                </td>
+                <td>@item.ProductID</td>
+                <td>@item.ProductName</td>
+
+                <td>
+                    @foreach (Suppliers item2 in proveedor.Where(x => x.SupplierID == item.SupplierID).ToList())
+                {
+                        <label>  @item2.CompanyName</label>
+                    }
+                </td>
+                <td>
+                    @foreach (Categories item3 in categoria.Where(x => x.CategoryID == item.CategoryID).ToList())
+                {
+                        <label>  @item3.CategoryName</label>
+                    }
+                </td>
+                <td>@item.QuantityPerUnit</td>
+                <td>@item.UnitPrice</td>
+                <td>@item.UnitsInStock</td>
+                <td>@item.UnitsOnOrder</td>
+                <td>@item.ReorderLevel</td>
+                <td>@item.Discontinued</td>
+
+                <td>
+                    @Html.ActionLink(
+                   "Eliminar",
+                   "Eliminar",
+                   "Main",
+                   new { area = "CrudProducto", ID = item.ProductID }, null)
+                </td>
+               
+            </tr>
+        }
+    </tbody>
+   
+</table>
+<script>
+    $('#tbIDproducto').DataTable();
+</script>
+

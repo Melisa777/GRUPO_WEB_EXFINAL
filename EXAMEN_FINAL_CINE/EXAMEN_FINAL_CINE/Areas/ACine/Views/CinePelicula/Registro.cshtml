@@ -1,0 +1,69 @@
+﻿@using General;
+@model General.CinePelicula
+
+@{
+    ViewBag.Title = "Registro";
+
+    List<Cine> listaCine = (List<Cine>)ViewBag.ListadoCine;
+    List<Pelicula> listaPelicula = (List<Pelicula>)ViewBag.ListadoPelicula;
+}
+
+<h2>Registro</h2>
+@using (Html.BeginForm())
+{
+
+    <table>
+        <tr>
+            <td>Cine</td>
+            <td>
+                <select name="CodCine">
+                    @foreach (Cine item in listaCine)
+                    {
+                        <option value="@item.CodCine">@item.NombreCine</option>
+                    }
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Pelicula</td>
+            <td>
+                <select name="CodPelicula">
+                    @foreach (Pelicula item1 in listaPelicula)
+                    {
+                        <option value="@item1.CodPelicula">@item1.NombrePelicula</option>
+                    }
+                </select>
+            </td>
+        </tr>
+   <tr>
+       <td>Cartelera</td>
+
+       <td>
+
+           <select class="selectpicker">
+               <option>True</option>
+               <option>False</option>
+
+           </select>
+       </td>
+       
+   </tr>    
+      
+    </table>
+   
+   
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+
+
+

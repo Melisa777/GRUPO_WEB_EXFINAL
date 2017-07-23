@@ -1,0 +1,104 @@
+﻿
+
+
+        @using General;
+
+        @{
+            ViewBag.Title = "Index";
+
+
+            List<CinePelicula> producto = (List<CinePelicula>)ViewBag.ListadoCinePelicula;
+            List<Cine> categoria = (List<Cine>)ViewBag.ListadoCine;
+            List<Pelicula> proveedor = (List<Pelicula>)ViewBag.ListadoPelicula;
+
+        }
+        <h2></h2>
+
+        <h2>Listado de Cine-Pelicula </h2>
+
+        <br />
+
+
+        @Html.ActionLink(
+    "Agregar nuevo producto",
+                "Registro",
+                   "CinePelicula",
+                   new { area = "ACine" }, new { @class = "btn btn-success" })
+
+
+        <br />
+        <br />
+
+
+
+        <table id="tbCine">
+            <thead>
+                <tr>
+
+
+                    <th>
+                        CINE
+                    </th>
+                    <th>
+                        PELICULA
+                    </th>
+                    <th>
+                        CARTELERA
+                    </th>
+
+                    <th></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (CinePelicula item in producto)
+                {
+                    <tr>
+                        <td>
+                            @Html.ActionLink(
+                   "Editar",
+                   "Editar",
+                   "CinePelicula",
+                   new { area = "ACine", ID = item.CodCine, ID1 = item.CodPelicula, id3 = item.EnCartelera }, null)
+                        </td>
+
+                        <td>
+                            @foreach (Cine item1 in categoria.Where(x => x.CodCine == item.CodCine).ToList())
+                {
+                                <label>  @item1.NombreCine</label>
+                            }
+                        </td>
+                        <td>
+                            @foreach (Pelicula item2 in proveedor.Where(x => x.CodPelicula == item.CodPelicula).ToList())
+                {
+                                <label>  @item2.NombrePelicula</label>
+                            }
+
+                        </td>
+
+                        <td>@item.EnCartelera</td>
+
+
+
+
+
+                        <td>
+                            @Html.ActionLink(
+                   "Eliminar",
+                   "Eliminar",
+                   "CinePelicula",
+                   new { area = "ACine", ID = item.CodCine, ID1 = item.CodPelicula, ID2 = item.EnCartelera }, null)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+
+
+
+
+<script>
+    $('#tbCine').DataTable();
+</script>
+

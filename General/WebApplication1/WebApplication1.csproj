@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{40F89B75-4144-4DD0-8E79-C9A46DEB6F8C}</ProjectGuid>
+    <ProjectGuid>{C811B7D9-1F85-46B0-A698-6F4F45CE38CF}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EXAMEN_FINAL_CINE</RootNamespace>
-    <AssemblyName>EXAMEN_FINAL_CINE</AssemblyName>
+    <RootNamespace>WebApplication1</RootNamespace>
+    <AssemblyName>WebApplication1</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -195,8 +195,8 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Areas\ACine\ACineAreaRegistration.cs" />
-    <Compile Include="Areas\ACine\Controllers\CinePeliculaController.cs" />
+    <Compile Include="Areas\CrudProducto\Controllers\MainController.cs" />
+    <Compile Include="Areas\CrudProducto\CrudProductoAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -223,12 +223,12 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Areas\ACine\Views\web.config" />
-    <Content Include="Areas\ACine\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\ACine\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\ACine\Views\CinePelicula\Index.cshtml" />
-    <Content Include="Areas\ACine\Views\CinePelicula\Registro.cshtml" />
-    <Content Include="Areas\ACine\Views\CinePelicula\Editar.cshtml" />
+    <Content Include="Areas\CrudProducto\Views\web.config" />
+    <Content Include="Areas\CrudProducto\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\CrudProducto\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\CrudProducto\Views\Main\Index.cshtml" />
+    <Content Include="Areas\CrudProducto\Views\Main\Registro.cshtml" />
+    <Content Include="Areas\CrudProducto\Views\Main\Editar.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -278,8 +278,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\ACine\Models\" />
-    <Folder Include="Areas\ACine\Views\Director\" />
+    <Folder Include="Areas\CrudProducto\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -291,7 +290,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\General\General.csproj">
-      <Project>{707031aa-808c-48f8-86b4-676445cbadec}</Project>
+      <Project>{908a3254-35e9-4601-a565-1f028acac784}</Project>
       <Name>General</Name>
     </ProjectReference>
   </ItemGroup>
@@ -311,9 +310,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51176</DevelopmentServerPort>
+          <DevelopmentServerPort>58163</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51176/</IISUrl>
+          <IISUrl>http://localhost:58163/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
