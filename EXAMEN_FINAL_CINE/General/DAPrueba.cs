@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace General
 {
-    public class DAPersona
+    public class DAPrueba
     {
-        //dfjfyyukyukyuk
-        // LDR dfsgvdf
-
-
+        //xdhdsfgdsfgsd
     }
 }
