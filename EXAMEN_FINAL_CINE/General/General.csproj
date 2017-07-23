@@ -62,6 +62,7 @@
     </Compile>
     <Compile Include="DAAsiento.cs" />
     <Compile Include="DADirector.cs" />
+    <Compile Include="DAPersona.cs" />
     <Compile Include="DASala.cs" />
     <Compile Include="DATick.cs" />
     <Compile Include="Director.cs">
