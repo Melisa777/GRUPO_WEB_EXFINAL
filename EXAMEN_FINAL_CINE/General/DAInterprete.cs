@@ -19,10 +19,7 @@ namespace General
 
             return listado;
         }
-
-
-
-
+        
         static public bool RegistrarInterprete(Interprete interprete)
         {
             bool exito = true;
@@ -42,8 +39,7 @@ namespace General
 
             return exito;
         }
-
-
+        
         static public bool ActualizarInterprete(Interprete interprete) // referido a objeto
         {
             bool exito = true; 

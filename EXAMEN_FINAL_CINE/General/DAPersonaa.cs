@@ -20,7 +20,6 @@ namespace General
             return listado;
         }
         
-
         static public bool RegistrarPersona(Persona persona)
         {
             bool exito = true;
@@ -40,8 +39,7 @@ namespace General
 
             return exito;
         }
-
-
+        
         static public bool ActualizarPersona(Persona persona) 
         {
             bool exito = true; 
@@ -72,7 +70,6 @@ namespace General
             return exito;
 
         }
-
         static public bool EliminarPersona(int CodPersona) // referido a borrar
         {
             bool exito = true;

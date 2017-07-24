@@ -8,7 +8,6 @@ namespace General
 {
     public class DAFuncion
     {
-
         static public List<Funcion> ListadoFuncion()
         {
             List<Funcion> listado = new List<Funcion>();
@@ -29,7 +28,6 @@ namespace General
             }
 
         }
-
         static public bool RegistrarFuncion(Funcion funcion)
         {
             bool exito = true;
@@ -49,8 +47,7 @@ namespace General
 
             return exito;
         }
-
-
+        
         static public bool ActualizarFuncion(Funcion funcion) // referido a objeto
         {
             bool exito = true; 
