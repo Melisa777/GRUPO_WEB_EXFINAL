@@ -1,0 +1,102 @@
+﻿@using General;
+
+@{
+    ViewBag.Title = "Index";
+
+
+    List<Protagonista> protagonista = (List<Protagonista>)ViewBag.ListadoProtagonista;
+    List<Interprete> interprete = (List<Interprete>)ViewBag.ListadoInterprete;
+    List<Pelicula> pelicula = (List<Pelicula>)ViewBag.ListadoPelicula;
+
+}
+<h2></h2>
+
+<h2>Listado de Protagonista </h2>
+
+<br />
+
+
+@Html.ActionLink(
+    "Agregar nuevo Protagonista",
+                "Registro",
+                   "Protagonista",
+                   new { area = "ACine" }, new { @class = "btn btn-success" })
+
+
+<br />
+<br />
+
+
+
+<table id="tbCine">
+    <thead>
+        <tr>
+
+            <th></th>
+            <th>
+                CINE
+            </th>
+            <th>
+                PELICULA
+            </th>
+            <th>
+                CARTELERA
+            </th>
+
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Protagonista item in protagonista)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(
+                   "Editar",
+                   "Editar",
+                   "Protagonista",
+                   new { area = "ACine", ID = item.CodPelicula, ID1 = item.CodInterprete, id3 = item.NombreProtagonista, id4=item.EsPrincipal }, null)
+                </td>
+
+                <td>
+                    @foreach (Pelicula item1 in pelicula.Where(x => x.CodPelicula == item.CodPelicula).ToList())
+                {
+                        <label>  @item1.NombrePelicula</label>
+                    }
+                </td>
+                <td>
+                    @foreach (Interprete item2 in interprete.Where(x => x.CodInterprete == item.CodInterprete).ToList())
+                {
+                        <label>  @item2.Nombres</label>
+                    }
+
+                </td>
+                <td>@item.NombreProtagonista</td>
+                <td>@item.EsPrincipal</td>
+
+
+
+
+
+                <td>
+                    @Html.ActionLink(
+                   "Eliminar",
+                   "Eliminar",
+                   "Protagonista",
+                   new { area = "ACine", ID = item.CodInterprete, ID1 = item.CodPelicula, ID2 = item.NombreProtagonista, ID3 = item.EsPrincipal }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
+
+
+<script>
+    $('#tbCine').DataTable();
+</script>
+
+

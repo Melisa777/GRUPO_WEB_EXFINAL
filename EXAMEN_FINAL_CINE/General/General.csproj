@@ -68,7 +68,9 @@
     <Compile Include="DAInterprete.cs" />
     <Compile Include="DAPELICULA.cs" />
     <Compile Include="DAPersonaa.cs" />
+    <Compile Include="DAProtagonista.cs" />
     <Compile Include="DASala.cs" />
+    <Compile Include="DATicket.cs" />
     <Compile Include="Director.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
