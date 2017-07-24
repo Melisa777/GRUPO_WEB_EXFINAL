@@ -199,7 +199,10 @@
     <Compile Include="Areas\ACine\Controllers\CineController.cs" />
     <Compile Include="Areas\ACine\Controllers\CinePeliculaController.cs" />
     <Compile Include="Areas\ACine\Controllers\DirectorController.cs" />
+    <Compile Include="Areas\ACine\Controllers\FuncionController.cs" />
+    <Compile Include="Areas\ACine\Controllers\InterpreteController.cs" />
     <Compile Include="Areas\ACine\Controllers\PeliculaController.cs" />
+    <Compile Include="Areas\ACine\Controllers\PersonaController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -240,6 +243,15 @@
     <Content Include="Areas\ACine\Views\Director\Index.cshtml" />
     <Content Include="Areas\ACine\Views\Director\Registro.cshtml" />
     <Content Include="Areas\ACine\Views\Director\Editar.cshtml" />
+    <Content Include="Areas\ACine\Views\Interprete\Index.cshtml" />
+    <Content Include="Areas\ACine\Views\Interprete\Registro.cshtml" />
+    <Content Include="Areas\ACine\Views\Interprete\Editar.cshtml" />
+    <Content Include="Areas\ACine\Views\Persona\Index.cshtml" />
+    <Content Include="Areas\ACine\Views\Persona\Registro.cshtml" />
+    <Content Include="Areas\ACine\Views\Persona\Editar.cshtml" />
+    <Content Include="Areas\ACine\Views\Funcion\Index.cshtml" />
+    <Content Include="Areas\ACine\Views\Funcion\Registro.cshtml" />
+    <Content Include="Areas\ACine\Views\Funcion\Editar.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

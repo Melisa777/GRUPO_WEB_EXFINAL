@@ -1,0 +1,93 @@
+﻿@using General;
+
+@{
+    ViewBag.Title = "Index";
+
+
+    List<Funcion> funcion = (List<Funcion>)ViewBag.ListadoFuncion;
+    List<Pelicula> pelicula = (List<Pelicula>)ViewBag.ListadoPelicula;
+
+}
+<h2></h2>
+<h2>Listado de Funciones </h2>
+<br />
+@Html.ActionLink(
+    "Agregar nueva funcion",
+                "Registro",
+                   "Funcion",
+                   new { area = "ACine" }, new { @class = "btn btn-success" })
+
+<br />
+<br />
+
+<table id="tbFuncion">
+    <thead>
+        <tr>
+            <th> </th>
+            <th>
+                COD FUNCION
+            </th>
+            <th>
+                HORA INICIO
+            </th>
+            <th>
+                HORA FIN
+            </th>
+            <th>
+                COD PELICULA
+            </th>
+            <th>
+                FECHA FUNCION
+            </th>
+            <th>
+                PRECIO
+            </th>
+
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Funcion item in funcion)
+            {
+            <tr>
+                <td>
+                    @Html.ActionLink(
+                       "Editar",
+                       "Editar",
+                       "Funcion",
+                       new { area = "ACine", ID = item.CodFuncion }, null)
+                </td>
+                <td>@item.HoraInicio</td>
+                <td>@item.HoraFin</td>
+                
+
+                @*
+                    En este si corre el foreach (Que raro)
+                *@
+                <td>
+                    @foreach (Pelicula item2 in pelicula.Where(x => x.CodPelicula == item.CodPelicula).ToList())
+                    {
+                        <label>  @item2.NombrePelicula</label>
+                    }
+                </td>
+                <td>@item.FechaFuncion</td>
+                <td>@item.Precio</td>
+
+
+                <td>
+                    @Html.ActionLink(
+                       "Eliminar",
+                       "Eliminar",
+                       "Funcion",
+                       new { area = "ACine", ID = item.CodFuncion }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    $('#tbFuncion').DataTable();
+
+</script>

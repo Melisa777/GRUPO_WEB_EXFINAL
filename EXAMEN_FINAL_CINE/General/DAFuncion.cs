@@ -21,6 +21,14 @@ namespace General
             return listado;
         }
 
+        static public List<Pelicula> ListadoPelicula()
+        {
+            using (var data = new CineDBEntities())
+            {
+                return data.Pelicula.ToList();
+            }
+
+        }
 
         static public bool RegistrarFuncion(Funcion funcion)
         {

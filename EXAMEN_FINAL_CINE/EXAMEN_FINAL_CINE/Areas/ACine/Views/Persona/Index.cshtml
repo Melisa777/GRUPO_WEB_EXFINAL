@@ -1,0 +1,100 @@
+﻿@using General;
+
+@{
+    ViewBag.Title = "Index";
+
+    List<Persona> persona = (List<Persona>)ViewBag.ListadoPersona;
+
+}
+
+<h2></h2>
+<h2>Listado de Personas</h2>
+<br />
+@Html.ActionLink(
+    "Agregar nueva Persona",
+                "Registro",
+                   "Persona",
+                   new { area = "ACine" }, new { @class = "btn btn-success" })
+
+<br />
+<br />
+
+<table id="tbCodPersona">
+    <thead>
+        <tr>
+            <th> </th>
+            <th>
+                COD PERSONA
+            </th>
+            <th>
+                PATERNO
+            </th>
+            <th>
+                MATERNO
+            </th>
+            <th>
+                NOMBRES
+            </th>
+            <th>
+                DIRECCION
+            </th>
+            <th>
+                EMAIL
+            </th>
+            <th>
+                FECHA NACIMIENTO
+            </th>
+            <th>
+                NRO DOCUMENTO
+            </th>
+            <th>
+                FOTO
+            </th>
+            <th>
+                DOC
+            </th>
+
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Persona item in persona)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(
+                   "Editar",
+                   "Editar",
+                   "Persona",
+                   new { area = "ACine", ID = item.CodPersona }, null)
+                </td>
+                <td>@item.CodPersona</td>
+                <td>@item.Paterno</td>
+                <td>@item.Materno</td>
+                <td>@item.Nombres</td>
+                <td>@item.Direccion</td>
+                <td>@item.Email</td>
+                <td>@item.FechaNacimiento</td>
+                <td>@item.NroDocumento</td>
+                <td>@item.foto</td>
+                <td>@item.doc</td>
+
+
+
+                <td>
+                    @Html.ActionLink(
+                   "Eliminar",
+                   "Eliminar",
+                   "Persona",
+                   new { area = "ACine", ID = item.CodPersona}, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<script>
+    $('#tbCodPersona').DataTable();
+</script>

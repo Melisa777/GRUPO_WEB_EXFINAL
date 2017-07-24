@@ -18,7 +18,7 @@ namespace EXAMEN_FINAL_CINE.Areas.ACine.Controllers
         }
         public ActionResult Registro()
         {
-            ViewBag.ListadoEmpresa = DACinePelicula.ListadoCinePelicula();
+            ViewBag.ListadoCinePelicula = DACinePelicula.ListadoCinePelicula();
             ViewBag.ListadoCine = DACine.ListadoCine();
             ViewBag.ListadoPelicula = DAPELICULA.ListadoPelicula();
             return View();

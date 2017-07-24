@@ -1,0 +1,94 @@
+﻿@using General;
+
+@{
+    ViewBag.Title = "Index";
+
+    List<Interprete> interprete = (List<Interprete>)ViewBag.ListadoInterprete;
+
+
+}
+
+
+<h2></h2>
+<h2>Listado de Interpretes</h2>
+<br />
+@Html.ActionLink(
+    "Agregar nuevo Interprete",
+                "Registro",
+                   "Interprete",
+                   new { area = "ACine" }, new { @class = "btn btn-success" })
+
+<br />
+<br />
+
+<table id="tbCodInterprete">
+    <thead>
+        <tr>
+            <th> </th>
+            <th>
+                COD INTERPRETE
+            </th>
+            <th>
+                PATERNO
+            </th>
+            <th>
+                MATERNO
+            </th>
+            <th>
+                NOMBRES
+            </th>
+            <th>
+                NACIONALIDAD
+            </th>
+            <th>
+                FOTO
+            </th>
+            <th>
+                BIO
+            </th>
+
+
+
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Interprete item in interprete)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(
+                   "Editar",
+                   "Editar",
+                   "Interprete",
+                   new { area = "ACine", ID = item.CodInterprete }, null)
+                </td>
+                <td>@item.CodInterprete</td>
+                <td>@item.Paterno</td>
+                <td>@item.Materno</td>
+                <td>@item.Nombres</td>
+                <td>@item.Nacionalidad</td>
+                <td>@item.Foto</td>
+                <td>@item.Bio</td>
+
+
+
+                <td>
+                    @Html.ActionLink(
+                   "Eliminar",
+                   "Eliminar",
+                   "Interprete",
+                   new { area = "ACine", ID = item.CodInterprete }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<script>
+    $('#tbCodInterprete').DataTable();
+</script>
+
+
