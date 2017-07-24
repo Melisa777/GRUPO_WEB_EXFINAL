@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\MELISA\Source\Repos\GRUPO_WEB_EXFINAL\EXAMEN_FINAL_CINE\General\Model1.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\MELISA\Source\Repos\ProyectoCine_Grupo63\EXAMEN_FINAL_CINE\General\Model1.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
