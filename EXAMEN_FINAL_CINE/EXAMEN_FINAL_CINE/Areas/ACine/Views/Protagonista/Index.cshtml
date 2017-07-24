@@ -28,19 +28,22 @@
 
 
 
-<table id="tbCine">
+<table id="tbProtagonista">
     <thead>
         <tr>
 
             <th></th>
             <th>
-                CINE
+               INTERPRETE 
             </th>
             <th>
-                PELICULA
+               NOMBRE PELICULA
             </th>
             <th>
-                CARTELERA
+               NOMBRE PROTAGONISTA
+            </th>
+            <th>
+                ES PRINCIPAL
             </th>
 
             <th></th>
@@ -56,14 +59,7 @@
                    "Editar",
                    "Editar",
                    "Protagonista",
-                   new { area = "ACine", ID = item.CodPelicula, ID1 = item.CodInterprete, id3 = item.NombreProtagonista, id4=item.EsPrincipal }, null)
-                </td>
-
-                <td>
-                    @foreach (Pelicula item1 in pelicula.Where(x => x.CodPelicula == item.CodPelicula).ToList())
-                {
-                        <label>  @item1.NombrePelicula</label>
-                    }
+                   new { area = "ACine", ID1 = item.CodInterprete, ID = item.CodPelicula, ID12 = item.NombreProtagonista, ID2=item.EsPrincipal }, null)
                 </td>
                 <td>
                     @foreach (Interprete item2 in interprete.Where(x => x.CodInterprete == item.CodInterprete).ToList())
@@ -72,6 +68,13 @@
                     }
 
                 </td>
+                <td>
+                    @foreach (Pelicula item1 in pelicula.Where(x => x.CodPelicula == item.CodPelicula).ToList())
+                {
+                        <label>  @item1.NombrePelicula</label>
+                    }
+                </td>
+              
                 <td>@item.NombreProtagonista</td>
                 <td>@item.EsPrincipal</td>
 
@@ -96,7 +99,7 @@
 
 
 <script>
-    $('#tbCine').DataTable();
+    $('#tbProtagonista').DataTable();
 </script>
 
 
