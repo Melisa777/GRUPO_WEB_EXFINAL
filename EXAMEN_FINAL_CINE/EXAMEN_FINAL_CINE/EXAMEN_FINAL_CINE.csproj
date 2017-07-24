@@ -206,6 +206,7 @@
     <Compile Include="Areas\ACine\Controllers\PersonaController.cs" />
     <Compile Include="Areas\ACine\Controllers\ProtagonistaController.cs" />
     <Compile Include="Areas\ACine\Controllers\SalaController.cs" />
+    <Compile Include="Areas\ACine\Controllers\TicketController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -264,6 +265,9 @@
     <Content Include="Areas\ACine\Views\Protagonista\Index.cshtml" />
     <Content Include="Areas\ACine\Views\Protagonista\Registro.cshtml" />
     <Content Include="Areas\ACine\Views\Protagonista\Editar.cshtml" />
+    <Content Include="Areas\ACine\Views\Ticket\Index.cshtml" />
+    <Content Include="Areas\ACine\Views\Ticket\Registro.cshtml" />
+    <Content Include="Areas\ACine\Views\Ticket\Editar.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

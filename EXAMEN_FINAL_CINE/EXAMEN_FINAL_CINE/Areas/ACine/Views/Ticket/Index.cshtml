@@ -1,0 +1,110 @@
+﻿@using General;
+
+@{
+    ViewBag.Title = "Index";
+
+    List<Ticket> ticket = (List<Ticket>)ViewBag.ListadoTicket;
+    List<Asiento> asiento = (List<Asiento>)ViewBag.ListadoAsiento;
+    List<Persona> persona = (List<Persona>)ViewBag.ListadoPersona;
+    List<Funcion> funcion = (List<Funcion>)ViewBag.ListadoFuncion;
+  
+
+}
+
+
+<h2></h2>
+<h2>Listado de Peliculas </h2>
+<br />
+@Html.ActionLink(
+    "Agregar nueva Pelicula",
+                "Registro",
+                   "Ticket",
+                   new { area = "ACine" }, new { @class = "btn btn-success" })
+
+<br />
+<br />
+
+<table id="tbCodTicket">
+    <thead>
+        <tr>
+            <th> </th>
+            <th>
+                COD TICKET
+            </th>
+            <th>
+                DESCRIPCION
+            </th>
+            <th>
+               ASIENTO
+            </th>
+
+            <th>
+               PERSONA
+            </th>
+            <th>
+              FECHA DE LA FUNCION
+            </th>
+
+
+
+
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Ticket item in ticket)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(
+                   "Editar",
+                   "Editar",
+                   "Ticket",
+                   new { area = "ACine", ID = item.CodTicket }, null)
+                </td>
+                <td>@item.CodTicket</td>
+                <td>@item.Descripcion</td>
+
+                <td>
+                    @foreach (Asiento item2 in asiento.Where(x => x.CodAsiento == item.CodAsiento).ToList())
+                {
+                        <label>  @item2.DescripcionAsiento</label>
+                    }
+                </td>
+
+                <td>
+                    @foreach (Persona item2 in persona.Where(x => x.CodPersona == item.CodPersona).ToList())
+                {
+                        <label>  @item2.Nombres</label>
+                    }
+                </td>
+
+                <td>
+                    @foreach (Funcion item2 in funcion.Where(x => x.CodFuncion == item.CodFuncion).ToList())
+                {
+                        <label>  @item2.FechaFuncion</label>
+                    }
+                </td>
+             
+
+
+
+                <td>
+                    @Html.ActionLink(
+                   "Eliminar",
+                   "Eliminar",
+                   "Ticket",
+                   new { area = "ACine", ID = item.CodTicket }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<script>
+    $('#tbCodTicket').DataTable();
+</script>
+
+
