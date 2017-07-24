@@ -196,7 +196,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\ACine\ACineAreaRegistration.cs" />
+    <Compile Include="Areas\ACine\Controllers\CineController.cs" />
     <Compile Include="Areas\ACine\Controllers\CinePeliculaController.cs" />
+    <Compile Include="Areas\ACine\Controllers\DirectorController.cs" />
+    <Compile Include="Areas\ACine\Controllers\PeliculaController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -229,6 +232,14 @@
     <Content Include="Areas\ACine\Views\CinePelicula\Index.cshtml" />
     <Content Include="Areas\ACine\Views\CinePelicula\Registro.cshtml" />
     <Content Include="Areas\ACine\Views\CinePelicula\Editar.cshtml" />
+    <Content Include="Areas\ACine\Views\Pelicula\Index.cshtml" />
+    <Content Include="Areas\ACine\Views\Pelicula\Registro.cshtml" />
+    <Content Include="Areas\ACine\Views\Cine\Index.cshtml" />
+    <Content Include="Areas\ACine\Views\Cine\Registro.cshtml" />
+    <Content Include="Areas\ACine\Views\Cine\Editar.cshtml" />
+    <Content Include="Areas\ACine\Views\Director\Index.cshtml" />
+    <Content Include="Areas\ACine\Views\Director\Registro.cshtml" />
+    <Content Include="Areas\ACine\Views\Director\Editar.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -279,7 +290,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\ACine\Models\" />
-    <Folder Include="Areas\ACine\Views\Director\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

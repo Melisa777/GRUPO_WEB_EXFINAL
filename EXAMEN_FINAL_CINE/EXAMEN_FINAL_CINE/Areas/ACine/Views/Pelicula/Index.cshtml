@@ -1,0 +1,95 @@
+﻿@using General;
+
+@{
+    ViewBag.Title = "Index";
+
+    List<Pelicula> pelicula = (List<Pelicula>)ViewBag.ListadoPelicula;
+    List<Director> director = (List<Director>)ViewBag.ListadoDirector;
+
+}
+
+
+<h2></h2>
+<h2>Listado de Peliculas </h2>
+<br />
+@Html.ActionLink(
+    "Agregar nueva Pelicula",
+                "Registro",
+                   "Pelicula",
+                   new { area = "ACine" }, new { @class = "btn btn-success" })
+
+<br />
+<br />
+
+<table id="tbCodPelicula">
+    <thead>
+        <tr>
+            <th> </th>
+            <th>
+                COD PELICULA
+            </th>
+            <th>
+                NOMBRE DE LA PELÍCULA
+            </th>
+            <th>
+                NOMBRE DEL DIRECTOR
+            </th>
+
+            <th>
+               DURACIÓN
+            </th>
+            <th>
+               FECHA ESTRENO
+            </th>
+           
+            
+
+
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Pelicula item in pelicula)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(
+                   "Editar",
+                   "Editar",
+                   "Pelicula",
+                   new { area = "ACine", ID = item.CodPelicula}, null)
+                </td>
+                <td>@item.CodPelicula</td>
+                <td>@item.NombrePelicula</td>
+
+                <td>
+                    @foreach (Director item2 in director.Where(x => x.CodDirector == item.CodDirector).ToList())
+                {
+                        <label>  @item2.NombreDirector</label>
+                    }
+                </td>
+                
+                <td>@item.Duracion</td>
+                <td>@item.FechaEstreno</td>
+                
+
+
+                <td>
+                    @Html.ActionLink(
+                   "Eliminar",
+                   "Eliminar",
+                   "Pelicula",
+                   new { area = "ACine", ID = item.CodPelicula }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+  
+</table>
+
+<script>
+    $('#tbCodPelicula').DataTable();
+</script>
+
+

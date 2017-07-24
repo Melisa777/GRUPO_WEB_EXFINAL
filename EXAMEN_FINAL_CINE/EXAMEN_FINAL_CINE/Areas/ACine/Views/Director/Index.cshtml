@@ -1,0 +1,76 @@
+﻿@using General;
+
+@{
+    ViewBag.Title = "Index";
+
+    List<Director> director = (List<Director>)ViewBag.ListadoDirector;
+
+
+}
+
+
+<h2></h2>
+<h2>Listado de Directores</h2>
+<br />
+@Html.ActionLink(
+    "Agregar nuevo Director",
+                "Registro",
+                   "Director",
+                   new { area = "ACine" }, new { @class = "btn btn-success" })
+
+<br />
+<br />
+
+<table id="tbCodDirector">
+    <thead>
+        <tr>
+            <th> </th>
+            <th>
+                COD CINE
+            </th>
+            <th>
+                NOMBRE
+            </th>
+           
+
+
+
+
+
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Director item in director)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(
+                   "Editar",
+                   "Editar",
+                   "Director",
+                   new { area = "ACine", ID = item.CodDirector }, null)
+                </td>
+                <td>@item.CodDirector</td>
+                <td>@item.NombreDirector</td>
+
+               
+
+                <td>
+                    @Html.ActionLink(
+                   "Eliminar",
+                   "Eliminar",
+                   "Director",
+                   new { area = "ACine", ID = item.CodDirector }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<script>
+    $('#tbCodDirector').DataTable();
+</script>
+

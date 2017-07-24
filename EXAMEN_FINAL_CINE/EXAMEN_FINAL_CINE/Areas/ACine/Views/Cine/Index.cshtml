@@ -1,0 +1,81 @@
+﻿@using General;
+
+@{
+    ViewBag.Title = "Index";
+
+    List<Cine> cine = (List<Cine>)ViewBag.ListadoCine;
+   
+
+}
+
+
+<h2></h2>
+<h2>Listado de Cine </h2>
+<br />
+@Html.ActionLink(
+    "Agregar nuevo Cine",
+                "Registro",
+                   "Cine",
+                   new { area = "ACine" }, new { @class = "btn btn-success" })
+
+<br />
+<br />
+
+<table id="tbCodCine">
+    <thead>
+        <tr>
+            <th> </th>
+            <th>
+                COD CINE
+            </th>
+            <th>
+                NOMBRE 
+            </th>
+            <th>
+                DIRECCIÓN
+            </th>
+
+         
+
+
+
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Cine item in cine)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(
+                   "Editar",
+                   "Editar",
+                   "Cine",
+                   new { area = "ACine", ID = item.CodCine }, null)
+                </td>
+                <td>@item.CodCine</td>
+                <td>@item.NombreCine</td>
+
+                <td>@item.Direccion</td>
+                
+
+                <td>
+                    @Html.ActionLink(
+                   "Eliminar",
+                   "Eliminar",
+                   "Cine",
+                   new { area = "ACine", ID = item.CodCine }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<script>
+    $('#tbCodPelicula').DataTable();
+</script>
+
+
+

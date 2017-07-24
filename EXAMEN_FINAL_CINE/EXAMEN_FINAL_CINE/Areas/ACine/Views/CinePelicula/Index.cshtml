@@ -35,7 +35,7 @@
             <thead>
                 <tr>
 
-
+                    <th></th>
                     <th>
                         CINE
                     </th>
@@ -61,7 +61,7 @@
                    "CinePelicula",
                    new { area = "ACine", ID = item.CodCine, ID1 = item.CodPelicula, id3 = item.EnCartelera }, null)
                         </td>
-
+                        
                         <td>
                             @foreach (Cine item1 in categoria.Where(x => x.CodCine == item.CodCine).ToList())
                 {

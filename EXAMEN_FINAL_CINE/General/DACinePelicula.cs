@@ -67,11 +67,11 @@ namespace General
                 using (var data = new CineDBEntities())
                 {
                     // realizar la consulta y actualizar
-                    CinePelicula actual = data.CinePelicula.FirstOrDefault();// alias
+                    CinePelicula actual = data.CinePelicula.Where(x => x.EnCartelera == cinePeli.EnCartelera).FirstOrDefault();// alias
                     //actual.ID_Empresa = empresa.ID_Empresa;
                     actual.CodCine = cinePeli.CodCine;
                     actual.CodPelicula = cinePeli.CodPelicula;
-                    actual.EnCartelera = cinePeli.EnCartelera;
+                   
                   
                  // data.GEPOSTULANTEs.InsertOnSubmit(postulante);
                     data.SaveChanges(); // guarda los cambios
