@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\ACine\ACineAreaRegistration.cs" />
+    <Compile Include="Areas\ACine\Controllers\AsientoController.cs" />
     <Compile Include="Areas\ACine\Controllers\CineController.cs" />
     <Compile Include="Areas\ACine\Controllers\CinePeliculaController.cs" />
     <Compile Include="Areas\ACine\Controllers\DirectorController.cs" />
@@ -203,6 +204,7 @@
     <Compile Include="Areas\ACine\Controllers\InterpreteController.cs" />
     <Compile Include="Areas\ACine\Controllers\PeliculaController.cs" />
     <Compile Include="Areas\ACine\Controllers\PersonaController.cs" />
+    <Compile Include="Areas\ACine\Controllers\SalaController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -252,6 +254,12 @@
     <Content Include="Areas\ACine\Views\Funcion\Index.cshtml" />
     <Content Include="Areas\ACine\Views\Funcion\Registro.cshtml" />
     <Content Include="Areas\ACine\Views\Funcion\Editar.cshtml" />
+    <Content Include="Areas\ACine\Views\Asiento\Index.cshtml" />
+    <Content Include="Areas\ACine\Views\Asiento\Registro.cshtml" />
+    <Content Include="Areas\ACine\Views\Asiento\Editar.cshtml" />
+    <Content Include="Areas\ACine\Views\Sala\Index.cshtml" />
+    <Content Include="Areas\ACine\Views\Sala\Registro.cshtml" />
+    <Content Include="Areas\ACine\Views\Sala\Editar.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -331,7 +339,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51176</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

@@ -1,0 +1,98 @@
+﻿@using General;
+
+@{
+    ViewBag.Title = "Index";
+
+
+    List<Asiento> asiento = (List<Asiento>)ViewBag.ListadoAsiento;
+    List<Sala> sala = (List<Sala>)ViewBag.ListadoSala;
+
+}
+<h2></h2>
+<h2>Listado de Asientos </h2>
+<br />
+@Html.ActionLink(
+    "Agregar nuevo asiento",
+                "Registro",
+                   "Asiento",
+                   new { area = "ACine" }, new { @class = "btn btn-success" })
+
+<br />
+<br />
+
+<table id="tbIDasiento">
+    <thead>
+        <tr>
+            <th> </th>
+            <th>
+                ID ASIENTO
+            </th>
+            <th>
+                DESCRIPCIONASIENTO
+            </th>
+            @*<th>
+                    SALA
+
+                </th>*@
+
+            <th>
+                TIPO ASIENTO
+            </th>
+            <th>
+                DISPONIBILIDAD
+            </th>
+
+
+
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Asiento item in asiento)
+            {
+            <tr>
+                <td>
+                    @Html.ActionLink(
+                       "Editar",
+                       "Editar",
+                       "Asiento",
+                       new { area = "ACine", ID = item.CodAsiento }, null)
+                </td>
+                <td>@item.CodAsiento</td>
+                <td>@item.DescripcionAsiento</td>
+
+                @*
+                    En esta parte es un foreach para listar los nombres de las salas _pero no me corre este codigo por eso lo pongo como comentario_pidele ayuda a Jose
+                    <td>
+                        @foreach (Sala item2 in sala.Where(x => x.CodSala == item.CodSala).ToList())
+                    {
+                            <label>  @item2.NombreSala</label>
+                        }
+                    </td>       *@
+
+                <td>@item.TipoAsiento</td>
+                <td>@item.Disponible</td>
+
+
+                <td>
+                    @Html.ActionLink(
+                       "Eliminar",
+                       "Eliminar",
+                       "Asiento",
+                       new { area = "ACine", ID = item.CodAsiento }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+        $('#tbIDasiento').DataTable();
+
+
+
+
+
+
+</script>

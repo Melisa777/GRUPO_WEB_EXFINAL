@@ -1,0 +1,101 @@
+﻿
+@using General;
+
+@{
+    ViewBag.Title = "Index";
+
+
+    List<Sala> sala = (List<Sala>)ViewBag.ListadoSala;
+    List<Cine> Cine = (List<Cine>)ViewBag.ListadoCine;
+
+}
+<h2></h2>
+<h2>Listado de Salas </h2>
+<br />
+@Html.ActionLink(
+    "Agregar nueva sala",
+                "Registro",
+                   "Sala",
+                   new { area = "ACine" }, new { @class = "btn btn-success" })
+
+<br />
+<br />
+
+<table id="tbIDsala">
+    <thead>
+        <tr>
+            <th> </th>
+            <th>
+                ID SALA
+            </th>
+            <th>
+                NOMBRE SALA
+            </th>
+            <th>
+                CAPACIDAD
+            </th>
+            <th>
+                TIPO
+            </th>
+            <th>
+                CINE
+
+            </th>
+
+
+
+
+
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Sala item in sala)
+            {
+            <tr>
+                <td>
+                    @Html.ActionLink(
+                       "Editar",
+                       "Editar",
+                       "Sala",
+                       new { area = "ACine", ID = item.CodSala }, null)
+                </td>
+                <td>@item.NombreSala</td>
+                <td>@item.Capacidad</td>
+                <td>@item.Tipo</td>
+
+                @*
+                    En este si corre el foreach (Que raro)
+                *@
+                <td>
+                    @foreach (Cine item2 in Cine.Where(x => x.CodCine == item.CodCine).ToList())
+                    {
+                        <label>  @item2.NombreCine</label>
+                    }
+                </td>
+
+
+
+                <td>
+                    @Html.ActionLink(
+                       "Eliminar",
+                       "Eliminar",
+                       "Sala",
+                       new { area = "ACine", ID = item.CodSala }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+        $('#tbIDsala').DataTable();
+
+
+
+
+
+
+</script>
+
