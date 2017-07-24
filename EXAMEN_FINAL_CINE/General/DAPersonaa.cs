@@ -8,7 +8,6 @@ namespace General
 {
     public class DAPersonaa
     {
-
         static public List<Persona> ListadoPersona()
         {
             List<Persona> listado = new List<Persona>();
@@ -43,18 +42,15 @@ namespace General
         }
 
 
-        static public bool ActualizarPersona(Persona persona) // referido a objeto
+        static public bool ActualizarPersona(Persona persona) 
         {
-            bool exito = true; // validación del registro
-                               // para el manejo de excepciones
+            bool exito = true; 
             try
             {
                 using (var data = new CineDBEntities())
                 {
-                    // realizar la consulta y actualizar
-                    Persona actual = data.Persona.Where(x => x.CodPersona == persona.CodPersona).FirstOrDefault();// alias
-                                                                                                                  //actual.ID_Empresa = empresa.ID_Empresa;
-                                                                                                                  //actual.ID_Usuario = empresa.ID_Usuario;
+                    
+                    Persona actual = data.Persona.Where(x => x.CodPersona == persona.CodPersona).FirstOrDefault();
                     actual.Paterno = persona.Paterno;
                     actual.Materno = persona.Materno;
                     actual.Nombres = persona.Nombres;
@@ -65,12 +61,12 @@ namespace General
                     actual.foto = persona.foto;
                     actual.doc = persona.doc;
 
-                    data.SaveChanges(); // guarda los cambios
+                    data.SaveChanges(); 
                 }
             }
             catch (Exception)
             {
-                // cuando ocurre el error
+                // error
                 exito = false;
             }
             return exito;

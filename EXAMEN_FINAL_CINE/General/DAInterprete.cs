@@ -46,16 +46,13 @@ namespace General
 
         static public bool ActualizarInterprete(Interprete interprete) // referido a objeto
         {
-            bool exito = true; // validación del registro
-                               // para el manejo de excepciones
+            bool exito = true; 
             try
             {
                 using (var data = new CineDBEntities())
                 {
                     // realizar la consulta y actualizar
-                    Interprete actual = data.Interprete.Where(x => x.CodInterprete == interprete.CodInterprete).FirstOrDefault();// alias
-                                                                                                                       //actual.ID_Empresa = empresa.ID_Empresa;
-                                                                                                                       //actual.ID_Usuario = empresa.ID_Usuario;
+                    Interprete actual = data.Interprete.Where(x => x.CodInterprete == interprete.CodInterprete).FirstOrDefault();
                     actual.Paterno = interprete.Paterno;
                     actual.Materno = interprete.Materno;
                     actual.Nombres = interprete.Nombres;

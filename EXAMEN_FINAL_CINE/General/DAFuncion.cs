@@ -53,13 +53,11 @@ namespace General
 
         static public bool ActualizarFuncion(Funcion funcion) // referido a objeto
         {
-            bool exito = true; // validación del registro
-            // para el manejo de excepciones
+            bool exito = true; 
             try
             {
                 using (var data = new CineDBEntities())
                 {
-                    // realizar la consulta y actualizar
                     Funcion actual = data.Funcion.Where(x => x.CodFuncion == funcion.CodFuncion).FirstOrDefault();// alias
                     
                     actual.HoraInicio = funcion.HoraInicio;

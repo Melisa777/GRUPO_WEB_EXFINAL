@@ -9,7 +9,6 @@ namespace EXAMEN_FINAL_CINE.Areas.ACine.Controllers
 {
     public class FuncionController : Controller
     {
-        // GET: ACine/Funcion
         public ActionResult Index()
         {
             ViewBag.ListadoFuncion = DAFuncion.ListadoFuncion();
@@ -27,14 +26,12 @@ namespace EXAMEN_FINAL_CINE.Areas.ACine.Controllers
         [HttpPost]
         public ActionResult Registro(Funcion funcion)
         {
-            //para cargar la data
             bool exito = DAFuncion.RegistrarFuncion(funcion);
 
             return RedirectToAction("Index");
 
         }
-
-
+        
         public ActionResult Eliminar(int ID)
         {
             bool exito = DAFuncion.EliminarFuncion(ID);
@@ -50,7 +47,6 @@ namespace EXAMEN_FINAL_CINE.Areas.ACine.Controllers
         [HttpPost]
         public ActionResult Editar(Funcion funcion)
         {
-            //para cargar la data
             bool exito = DAFuncion.ActualizarFuncion(funcion);
 
             return RedirectToAction("Index");
